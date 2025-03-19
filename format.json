@@ -1,0 +1,140 @@
+{
+    "configurations": [
+        {
+            "code": "CROP_CALENDAR",
+            "data": {
+                "type": "static"
+            }
+        },
+        {
+            "code": "SILT_CONTENT",
+            "data": {
+                "type": "static",
+                "legend": {
+                    "type": "singleValue",
+                    "title": "silt content",
+                    "details": [
+                        {
+                            "code": "0",
+                            "percentage": 7.32
+                        },
+                        {
+                            "code": "1",
+                            "percentage": 22.75
+                        },
+                        {
+                            "code": "2",
+                            "percentage": 53.98
+                        },
+                        {
+                            "code": "3",
+                            "percentage": 15.06
+                        },
+                        {
+                            "code": "4",
+                            "percentage": 0.84
+                        },
+                        {
+                            "code": "5",
+                            "percentage": 0.05
+                        },
+                        {
+                            "code": "6",
+                            "percentage": 0.01
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "code": "SOIL_GRIDS",
+            "data": {
+                "type": "static",
+                "legend": {
+                    "type": "singleValue",
+                    "title": "soil grids",
+                    "details": [
+                        {
+                            "code": "0",
+                            "percentage": 7.38
+                        },
+                        {
+                            "code": "1",
+                            "percentage": 0.00
+                        },
+                        {
+                            "code": "2",
+                            "percentage": 0.00
+                        },
+                        {
+                            "code": "3",
+                            "percentage": 0.00
+                        },
+                        {
+                            "code": "4",
+                            "percentage": 11.25
+                        },
+                        {
+                            "code": "5",
+                            "percentage": 73.64
+                        },
+                        {
+                            "code": "6",
+                            "percentage": 7.72
+                        },
+                        {
+                            "code": "7",
+                            "percentage": 0.0
+                        },
+                        {
+                            "code": "8",
+                            "percentage": 0.00
+                        },
+                        {
+                            "code": "9",
+                            "percentage": 0.00
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "code": "SOIL_MOISTURE",
+            "data": {
+                "type": "static"
+            }
+        },
+        {
+            "code": "VOLUMETIC_WATER_CONTENT",
+            "data": {
+                "type": "static",
+                "legend": {
+                    "type": "singleValue",
+                    "title": "volumetic water content",
+                    "details": [
+                        {
+                            "code": "4",
+                            "percentage": 12.36
+                        },
+                        {
+                            "code": "5",
+                            "percentage": 1.31
+                        },
+                        {
+                            "code": "6",
+                            "percentage": 19.01
+                        },
+                        {
+                            "code": "9",
+                            "percentage": 28.84
+                        },
+                        {
+                            "code": "11",
+                            "percentage": 38.48
+                        }
+                    ]
+                }
+            }
+        }
+    ]
+}
