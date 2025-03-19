@@ -38,29 +38,15 @@ this command have a lot of arguments to do what you want.
 
 ### <b>Params</b>
 <b>In the command line you can use the belows params :</b>
->--shp
 
-this flag can be used to define the fact that the data source is a shapefile. you must specify the location of the shapefile.
+`--shp`, this flag can be used to define the fact that the data source is a shapefile. you must specify the location of the shapefile.
 
->--cut
-
-with this flag you can cut your shapefile, 
+`--cut`, with this flag you can cut your shapefile, 
 with this parameter you must put the location of the file with the shapefile to use for cutting.
 
->--save
+`--save`, you can use this flag if you want to save your work in a specific directory, otherwise the data will overwrite the old data. specify the folder where you want to save and the name of the file.
 
-you can use this flag if you want to save your work in a specific directory, otherwise the data will overwrite the old data. specify the folder where you want to save and the name of the file.
-
->--rasterize True
-
-this flag is used to rasterize a shapefile, this flag don't work without this flag :
->--col
-
-this flag is used to define the column to rasterize the shapefile.
-
+`--rasterize True` this flag is used to rasterize a shapefile, this flag don't work without this flag :
+`--col` wich is used to define the column to rasterize the shapefile.
 the column must be of numeric type.
-
-You can also use this flag with rasterize : 
->--resolution
-
-this flag take a float value and is used to define the resolution of the final raster.
+You can also use the flag `--resolution` with rasterize, this flag take a float value and is used to define the resolution of the final raster.
