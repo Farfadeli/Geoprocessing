@@ -23,6 +23,8 @@ def cut_shapefile(shapefile: str, cut: str, save: str = ""):
 
 
 def rasterizer(shp: str, column: str, resolution: float, save: str = ""):
+    
+    print("ohoo")
     vector = gpd.read_file(shp)
     minx, miny, maxx, maxy = vector.total_bounds
     width = int((maxx - minx) / resolution)
@@ -39,8 +41,9 @@ def rasterizer(shp: str, column: str, resolution: float, save: str = ""):
         fill=0,
         dtype='float32'
     )
+    
     with rasterio.open(
-        ("output_raster.tif" if save == "" else save),
+        "output_raster.tif",
         'w',
         driver='GTiff',
         height=height,
@@ -51,6 +54,7 @@ def rasterizer(shp: str, column: str, resolution: float, save: str = ""):
         transform=rasterio.transform.from_bounds(
             minx, miny, maxx, maxy, width, height),
     ) as dst:
+        
         dst.write(raster, 1)
 
 
@@ -204,7 +208,7 @@ if __name__ == "__main__":
             "Argument column is used to rasterize, thanks to implement the --rasterize [file] in your command line")
     if args.classify != None and args.raster == None:
         raise Exception(
-            "Vous ne pouvez pas classifier les vide (utiliser le flag --raster avant d'utiliser ce flag)")
+            "Vous ne pouvez pas classifier le vide (utiliser le flag --raster avant d'utiliser ce flag)")
 
     if (args.shp != None):
         if args.cut != None:
