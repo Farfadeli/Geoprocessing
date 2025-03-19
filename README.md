@@ -19,7 +19,7 @@ foo@bar:~$ git clone https://github.com/Farfadeli/Geoprocessing.git
 foo@bar:~$ notepad $PROFILE
 ```
 In the notepad window, add this line :
-```console
+```ps1
 function geoprocessing { python "C:\command\classification.py" @args }
 ```
 after this cloase notepad and run this command :
