@@ -21,7 +21,6 @@ def cut_shapefile(shapefile: str, cut: str, save: str = ""):
     coupe.to_file(shapefile) if save == "" else coupe.to_file(save)
     print("Découpage de la couche vectorielle terminer")
 
-
 def rasterizer(shp: str, column: str, resolution: float, save: str = ""):
     
     print("ohoo")
@@ -41,9 +40,11 @@ def rasterizer(shp: str, column: str, resolution: float, save: str = ""):
         fill=0,
         dtype='float32'
     )
-    
+    where = ""
+    if(save != "") : where = save
+    else : where = "output_raster.tif"
     with rasterio.open(
-        "output_raster.tif",
+        where,
         'w',
         driver='GTiff',
         height=height,
@@ -56,7 +57,6 @@ def rasterizer(shp: str, column: str, resolution: float, save: str = ""):
     ) as dst:
         
         dst.write(raster, 1)
-
 
 def view(elem: str):
     if elem[len(elem)-3:] == "shp":
@@ -114,7 +114,6 @@ def view(elem: str):
             plt.title("raster view")
             plt.show()
 
-
 def classification(tif: str, save: str, classify: str):
     with rasterio.open(tif) as dataset:
         band = dataset.read(1)
@@ -168,6 +167,8 @@ def classification(tif: str, save: str, classify: str):
                 if save != "":
                     with rasterio.open(save, 'w' , **profile) as out_data :
                         out_data.write(reclassified, 1)
+                        with open(f"{'/'.join(save.split("\\")[:-1])}/config.json", 'w') as json_file:
+                            json.dump(out_json, json_file)
                 else :
                     path = f"{'/'.join(tif.split("\\")[:-1])}/reclassify.tif"
                     with rasterio.open(path, 'w' , **profile) as out_data :
@@ -178,6 +179,8 @@ def classification(tif: str, save: str, classify: str):
                 raise Exception(
                     "Type de donnée non valide, si vous avez mis un liste, elle ce construit comme suit : 1,2,3,...")
 
+def remove_without(col_name : str) :
+    pass
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(
@@ -196,7 +199,7 @@ if __name__ == "__main__":
     parser.add_argument(
         "--raster", help="Utilisation d'un raster dans les géotraitement")
     parser.add_argument(
-        "--classify", help="Classifciation du raster de deux manière différente")
+        "--classif", help="Classifciation du raster de deux manière différente")
 
     args = parser.parse_args()
 
@@ -206,7 +209,7 @@ if __name__ == "__main__":
     if (args.rasterize == False and args.col != None):
         raise Exception(
             "Argument column is used to rasterize, thanks to implement the --rasterize [file] in your command line")
-    if args.classify != None and args.raster == None:
+    if args.classif != None and args.raster == None:
         raise Exception(
             "Vous ne pouvez pas classifier le vide (utiliser le flag --raster avant d'utiliser ce flag)")
 
@@ -217,5 +220,5 @@ if __name__ == "__main__":
             rasterizer(args.shp, args.col, args.resolution, args.save)
     if (args.view != None):
         view(args.view)
-    if args.classify != None:
-        classification(args.raster, args.save, args.classify)
+    if args.classif != None:
+        classification(args.raster, args.save, args.classif)
