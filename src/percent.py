@@ -123,7 +123,7 @@ if __name__ == "__main__":
 
     if args.json == None:
         raise ValueError(
-            "You have to enter a valid path of json with '--json' and a valid path for the json output with '--save_folder'")
+            "You have to enter a invalid path of json with '--json' and a invalid path for the json output with '--save_folder'")
     if args.shapefile == None and (args.raster != None or args.raster_folder != None):
         raise ValueError("You have to define a shapefile to cut raster")
 
