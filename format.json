@@ -1,0 +1,68 @@
+{
+    "configurations": [
+        {
+            "code": "CROP_CALENDAR",
+            "data": {
+                "type": "static"
+            }
+        },
+        {
+            "code": "SILT_CONTENT",
+            "data": {
+                "type": "static",
+                "legend": {
+                    "type": "singleValue",
+                    "title": "silt content",
+                    "details": [
+                        {
+                            "code": "1",
+                            "percentage": 2.98
+                        },
+                        {
+                            "code": "2",
+                            "percentage": 97.02
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "code": "SOIL_GRIDS",
+            "data": {
+                "type": "static",
+                "legend": {
+                    "type": "singleValue",
+                    "title": "soil grids",
+                    "details": [
+                        {
+                            "code": "6",
+                            "percentage": 100.0
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "code": "SOIL_MOISTURE",
+            "data": {
+                "type": "static"
+            }
+        },
+        {
+            "code": "VOLUMETIC_WATER_CONTENT",
+            "data": {
+                "type": "static",
+                "legend": {
+                    "type": "singleValue",
+                    "title": "volumetic water content",
+                    "details": [
+                        {
+                            "code": "9",
+                            "percentage": 100.0
+                        }
+                    ]
+                }
+            }
+        }
+    ]
+}
