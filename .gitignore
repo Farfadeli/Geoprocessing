@@ -2,3 +2,17 @@ raster/*
 shapefile/*
 Data/*
 tmp/
+ENV/
+ENV/*
+ISS/
+ISS/*
+large_basins/
+large_basins/*
+small_basins/
+small_basins/*
+out/
+out/*
+country/
+country/*
+conf/
+conf/*

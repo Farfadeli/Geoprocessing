@@ -1,23 +1,206 @@
 {
-    "configuration": [
+    "configurations": [
+        {
+            "code": "MEAN_FUELWOOD",
+            "data": {
+                "type": "static",
+                "analyticSingleValue": 0.12
+            }
+        },
+        {
+            "code": "GLOBAL_SOIL_ORGANIC_CARBON",
+            "data": {
+                "type": "static",
+                "analyticSingleValue": 36.75
+            }
+        },
+        {
+            "code": "ANNUAL_PRECIPITATION",
+            "data": {
+                "type": "static",
+                "analyticSingleValue": 4.9846049841934345e+36
+            }
+        },
+        {
+            "code": "MINIMUM_TEMPERATURE_COLDEST",
+            "data": {
+                "type": "static",
+                "analyticSingleValue": 4.9846049841934345e+36
+            }
+        },
+        {
+            "code": "PEATS",
+            "data": {
+                "type": "static",
+                "analyticSingleValue": 7.24
+            }
+        },
+        {
+            "code": "TEMPERATURE_ANNUAL_RANGE",
+            "data": {
+                "type": "static",
+                "analyticSingleValue": 4.9846049841934345e+36
+            }
+        },
+        {
+            "code": "PRECIPITATION_WETTEST",
+            "data": {
+                "type": "static",
+                "analyticSingleValue": 4.9846049841934345e+36
+            }
+        },
+        {
+            "code": "MAXIMUM_TEMPERATURE_WARMEST",
+            "data": {
+                "type": "static",
+                "analyticSingleValue": 4.9846049841934345e+36
+            }
+        },
+        {
+            "code": "MEAN_TEMPERATURE_COLDEST",
+            "data": {
+                "type": "static",
+                "analyticSingleValue": 4.9846049841934345e+36
+            }
+        },
+        {
+            "code": "MEAN_TEMPERATURE_WARMEST",
+            "data": {
+                "type": "static",
+                "analyticSingleValue": 4.9846049841934345e+36
+            }
+        },
+        {
+            "code": "TEMPERATURE_SEASONALITY",
+            "data": {
+                "type": "static",
+                "analyticSingleValue": 4.9846049841934345e+36
+            }
+        },
+        {
+            "code": "PRECIPITATION_DRIEST",
+            "data": {
+                "type": "static",
+                "analyticSingleValue": 4.9846049841934345e+36
+            }
+        },
+        {
+            "code": "PRECIPITATION_SEASONALITY",
+            "data": {
+                "type": "static",
+                "analyticSingleValue": 4.9846049841934345e+36
+            }
+        },
+        {
+            "code": "ANNUAL_MEAN_TEMPERATURE",
+            "data": {
+                "type": "static",
+                "analyticSingleValue": 4.9846049841934345e+36
+            }
+        },
+        {
+            "code": "PRECIPITATION_DRIEST_QUARTER",
+            "data": {
+                "type": "static",
+                "analyticSingleValue": 4.9846049841934345e+36
+            }
+        },
+        {
+            "code": "ISOTHERMALITY",
+            "data": {
+                "type": "static",
+                "analyticSingleValue": 4.9846049841934345e+36
+            }
+        },
+        {
+            "code": "MEAN_DIURNAL_RANGE",
+            "data": {
+                "type": "static",
+                "analyticSingleValue": 4.9846049841934345e+36
+            }
+        },
+        {
+            "code": "PRECIPITATION_WETTEST_QUARTER",
+            "data": {
+                "type": "static",
+                "analyticSingleValue": 4.9846049841934345e+36
+            }
+        },
         {
             "code": "GEMStat_INDICATOR_ORGANISM",
             "data": {
                 "type": "static",
                 "legend": {
                     "type": "singleValue",
-                    "title": "gemstat indicator organism",
+                    "title": "Global Wetlands",
                     "details": [
                         {
-                            "code": "MODERATE",
-                            "percentage": 80.77
+                            "MODERATE": 84.89
                         },
                         {
-                            "code": "LOW_MODERATE",
-                            "percentage": 19.23
+                            "LOW_MODERATE": 12.29
+                        },
+                        {
+                            "UNKNOWN": 2.82
                         }
                     ]
                 }
+            }
+        },
+        {
+            "code": "MEAN_FORAGE",
+            "data": {
+                "type": "static",
+                "analyticSingleValue": 0.17
+            }
+        },
+        {
+            "code": "MEAN_RECREATION",
+            "data": {
+                "type": "static",
+                "analyticSingleValue": 0.05
+            }
+        },
+        {
+            "code": "PRECIPITATION_WARMEST_QUARTER",
+            "data": {
+                "type": "static",
+                "analyticSingleValue": 4.9846049841934345e+36
+            }
+        },
+        {
+            "code": "MEAN_TEMPERATURE_DRIEST",
+            "data": {
+                "type": "static",
+                "analyticSingleValue": 4.9846049841934345e+36
+            }
+        },
+        {
+            "code": "MEAN_TEMPERATURE_WETTEST",
+            "data": {
+                "type": "static",
+                "analyticSingleValue": 4.9846049841934345e+36
+            }
+        },
+        {
+            "code": "PERCENTAGE_OF_ERODED_AREA",
+            "data": {
+                "type": "static",
+                "analyticSingleValue": 32437.74
+            }
+        },
+        {
+            "code": "MEAN_Carbon",
+            "data": {
+                "type": "static",
+                "analyticSingleValue": 0.17
+            }
+        },
+        {
+            "code": "WETLANDS",
+            "data": {
+                "type": "static",
+                "analyticSingleValue": 0.81
             }
         }
     ]

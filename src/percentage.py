@@ -13,6 +13,11 @@ def read_json(json_file: str):
         json_data = json.load(json_f)
         return json_data
 
+def clean_tmp() :
+    tmp_file = glob.glob("./tmp/*.tif")
+    for e in tmp_file:
+        os.remove(e)
+
 def get_type(raster : str, json_file : str) -> str:
     """
         function permettant de retrouver le type raster en fonction de son nom
@@ -85,7 +90,7 @@ def create_tmp_raster(raster: str, shapefile: str):
         output = os.path.join(output_dir, f"{code}.tif")
         with rasterio.open(output, "w", **out_meta) as dest:
             dest.write(out_image)
-            print(f"Raster créer avec succès et enregistré dans : {output_dir}/{code}.tif ✔️")
+            print(f"Raster créer avec succès et enregistré dans : {output_dir}/{code.lower()}.tif ✔️")
 
 def get_code_idx(data, code):
     """
@@ -152,8 +157,8 @@ def get_percent(data):
 
 def save_conf_files(data, save):
     for key, value in data.items():
-        with open(f"{save}/{key}.json", "w") as outfile:
-            json.dump(value, outfile)
+        with open(f"{save}/{key.lower()}.json", "w") as outfile:
+            json.dump(value, outfile, indent=4)
 
 def get_average():
     res = {}
@@ -204,7 +209,7 @@ def general_controller(rasters: list, shapefile : str, json_file: str, save: str
                             "legend" : {
                                 "type" : raster_type,
                                 "title" : raster_name,
-                                "details" : value
+                                "details" : [{"code" : k , "percentage" : v} for elem in value for k , v in elem.items() ]
                             }
                         }
                     })
@@ -216,7 +221,7 @@ def general_controller(rasters: list, shapefile : str, json_file: str, save: str
                             "legend" : {
                                 "type" : raster_type,
                                 "title" : raster_name,
-                                "details" : value
+                                "details" : [{"code" : k , "percentage" : v} for elem in value for k , v in elem.items() ]
                             }
                         }
                     }]}
@@ -228,6 +233,7 @@ def general_controller(rasters: list, shapefile : str, json_file: str, save: str
                     final_json[key]["configurations"].append({
                         "code": raster_code,
                         "data": {
+                            "type" : "static",
                             "analyticSingleValue" : round(value, 2)
                         }
                     })
@@ -235,6 +241,7 @@ def general_controller(rasters: list, shapefile : str, json_file: str, save: str
                     final_json[key] = {"configurations": [{
                         "code": raster_code,
                         "data": {
+                            "type" : "static",
                             "analyticSingleValue": round(value, 2)
                         }
                     }]}
@@ -275,3 +282,5 @@ if __name__ == "__main__":
     if os.path.exists(args.save) == False : os.mkdir(args.save)
 
     general_controller(glob.glob(f"{args.rasters}/*.tif"), args.shapefile, args.json, args.save)
+
+    clean_tmp()
