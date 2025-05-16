@@ -169,7 +169,7 @@ def get_average():
 
             band = src.read(1)
             h, w = band.shape
-            somme = np.int128(0)
+            somme = np.int64(0)
 
             for row in range(h):
                 for col in range(w):
